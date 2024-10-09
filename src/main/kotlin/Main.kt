@@ -1,3 +1,5 @@
+import java.io.File
+
 data class Creature(
     private var id: Int,
     private var isHumanoid: Boolean,
@@ -11,33 +13,24 @@ data class Creature(
     fun getPlanet() = planet
     fun getAge() = age
     fun getTraits() = traits
+}
 
-    // Methods
-    fun greet(){
-        println("Hello! I am creature No. ${id}")
-    }
-
-    fun printInfo() {
-        println("Creature: ${id}")
-        println("Is Humanoid? ${isHumanoid}")
-        println("It is from ${planet}")
-        println("It is ${age} years old")
-        println("It is ${traits}")
+data class FileReader(
+    private val filePath: String
+) {
+    fun readAndPrint() {
+        val file = File(filePath) //creates a File object
+        if (file.exists()) {
+            file.forEachLine {
+                println(it)
+            }
+        } else {
+            println("File does not exist")
+        }
     }
 }
 
-
 fun main() {
-
-    // Create instances of the Creature class
-    val creature1 = Creature(1, false, "Mars", 200, listOf("tall", "green"))
-    val creature2 = Creature(2, true, "Earth", 16, listOf("intelligent", "blue-eyed"))
-
-    for (creature in listOf(creature1, creature2)) {
-        creature.printInfo()
-    }
-
-    val creature3 = creature2.copy(id = 3, isHumanoid = false)
-    creature3.printInfo()
-    creature3.greet()
+    val fileReader = FileReader("src/main/resources/test-input.json")
+    fileReader.readAndPrint()
 }
