@@ -8,7 +8,7 @@ class UniverseClassifier {
     )
 
     private fun isWookie(creature: Creature): Boolean {
-        return (creature.isHumanoid == true || creature.isHumanoid == null) &&
+        return (creature.isHumanoid == false || creature.isHumanoid == null) &&
                 (creature.planet == Planet.Kashyyyk || creature.planet == null) &&
                 (creature.age in 0..400 || creature.age == null) &&
                 (creature.traits == null || Traits.HAIRY in creature.traits || Traits.TALL in creature.traits)
