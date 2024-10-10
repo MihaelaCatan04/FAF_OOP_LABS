@@ -51,9 +51,21 @@ class FileReader(
     }
 }
 
+// Class to write the output
+class OutputWriter() {
+    fun writeToOutputFiles(path: String, universes: MutableList<Universe>) {
+        val mapper = jacksonObjectMapper()
+        for (universe in universes) {
+            val outputFile = File("$path/${universe.name.lowercase(Locale.getDefault())}.json")
+            outputFile.parentFile.mkdirs()
+            outputFile.writeText(mapper.writeValueAsString(CreatureList(universe.individuals)))
+        }
+    }
+}
+
 // Class to classify the creatures
 class UniverseClassifier {
-     val universes = mutableListOf(
+    val universes = mutableListOf(
         Universe("starWars"),
         Universe("marvel"),
         Universe("hitchHiker"),
@@ -120,12 +132,35 @@ class UniverseClassifier {
     }
 }
 
+// Class to view the output json files content
+class View() {
+    fun showContent(){
+        for (universe in UniverseClassifier().universes) {
+            val fileName = "src/main/resources/output/${universe.name.lowercase()}.json"
+            val file = File(fileName)
+
+            if (file.exists()) {
+                println("Creatures from the ${universe.name} universe:")
+                file.forEachLine {
+                    println(it)
+                }
+            } else {
+                println("File for universe ${universe.name} does not exist.")
+            }
+        }
+    }
+}
 fun main() {
     val fileReader = FileReader("src/main/resources/input.json")
     val data = fileReader.readAndParseJson()
     if (data != null) {
         val classifier = UniverseClassifier()
         classifier.classify(data)
+        val outputWriter = OutputWriter()
+        outputWriter.writeToOutputFiles("src/main/resources/output", classifier.universes)
+        println("Classification complete. Output files written.")
+        val view = View()
+        view.showContent()
     } else {
         println("Failed to read or parse the input file.")
     }
