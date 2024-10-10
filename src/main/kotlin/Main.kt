@@ -1,12 +1,14 @@
 import java.io.File
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import java.util.*
 
-// Class for Planet
+// Enumeration of Planet
 enum class Planet {
     Earth, Asgard, Betelgeuse, Vogsphere, Kashyyyk, Endor
 }
 
+// Enumeration of Traits
 enum class Traits {
     HAIRY, TALL, SHORT, BLONDE, EXTRA_ARMS, EXTRA_HEAD, GREEN, BULKY, POINTY_EARS
 }
@@ -22,77 +24,109 @@ data class Creature(
 
 // Class for a list of creatures
 data class CreatureList(
-    val data: List<Creature>
+    val data: MutableList<Creature>
 )
 
 // Class for defining universe
 data class Universe(
     val name: String,
-    val individuals: MutableList<CreatureList>
+    val individuals: MutableList<Creature> = mutableListOf()
 )
 
-
-
 // Class for file reading
-data class FileReader(
+class FileReader(
     private val filePath: String
 ) {
-    // Method to read a file and print its content
-    fun readAndPrint() {
-        val file = File(filePath)
-        if (file.exists()) {
-            file.forEachLine {
-                println(it)
-            }
-        } else {
-            println("File does not exist")
-        }
-    }
     // Method to read a JSON from a file and parse it
-    fun readAndParseJson() {
+    fun readAndParseJson(): MutableList<Creature>? {
         val file = File(filePath)
-        if (file.exists()) {
+        return if (file.exists()) {
             val mapper = jacksonObjectMapper()
-            val text = file.readText()
-            val response: CreatureList = mapper.readValue(text)
-            println("All creatures:");
-            for (creature in response.data) {
-                println("Creature: $creature")
-            }
-            println("Creatures with even id:")
-            for (creature in response.data) {
-                // print event IDs
-                if (creature.id % 2 == 0) {
-                    println(creature)
-                }
-            }
-            println("Creatures with odd id:")
-            for (creature in response.data) {
-                if (creature.id % 2 != 0) {
-                    println(creature)
-                }
-            }
-            println("Creatures from Earth:")
-            for (creature in response.data) {
-                if (creature.planet == Planet.Earth) {
-                    println(creature)
-                }
-            }
-            println("Very huge creatures:")
-            for (creature in response.data) {
-                if (creature.traits != null && Traits.TALL in creature.traits) {
-                    println(creature)
-                }
-            }
+            val creatureList: CreatureList = mapper.readValue(file)
+            creatureList.data
         } else {
             println("File does not exist")
+            null
         }
     }
+}
 
+// Class to classify the creatures
+class UniverseClassifier {
+     val universes = mutableListOf(
+        Universe("starWars"),
+        Universe("marvel"),
+        Universe("hitchHiker"),
+        Universe("rings")
+    )
 
+    private fun isWookie(creature: Creature): Boolean {
+        return (creature.isHumanoid == true || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Kashyyyk || creature.planet == null) &&
+                (creature.age in 0..400 || creature.age == null) &&
+                (creature.traits == null || Traits.HAIRY in creature.traits || Traits.TALL in creature.traits)
+    }
+
+    private fun isEwok(creature: Creature): Boolean {
+        return (creature.isHumanoid == false || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Endor || creature.planet == null) &&
+                (creature.age in 0..60 || creature.age == null) &&
+                (creature.traits == null || Traits.HAIRY in creature.traits || Traits.SHORT in creature.traits)
+    }
+
+    private fun isAsgardian(creature: Creature): Boolean {
+        return (creature.isHumanoid == true || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Asgard || creature.planet == null) &&
+                (creature.age in 0..5000 || creature.age == null) &&
+                (creature.traits == null || Traits.BLONDE in creature.traits || Traits.TALL in creature.traits)
+    }
+
+    private fun isBetelgeusian(creature: Creature): Boolean {
+        return (creature.isHumanoid == true || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Betelgeuse || creature.planet == null) &&
+                (creature.age in 0..100 || creature.age == null) &&
+                (creature.traits == null || Traits.EXTRA_ARMS in creature.traits || Traits.EXTRA_HEAD in creature.traits)
+    }
+
+    private fun isVogon(creature: Creature): Boolean {
+        return (creature.isHumanoid == false || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Vogsphere || creature.planet == null) &&
+                (creature.age in 0..200 || creature.age == null) &&
+                (creature.traits == null || Traits.BULKY in creature.traits || Traits.GREEN in creature.traits)
+    }
+
+    private fun isElf(creature: Creature): Boolean {
+        return (creature.isHumanoid == true || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Earth || creature.planet == null) &&
+                (creature.traits == null || Traits.BLONDE in creature.traits || Traits.POINTY_EARS in creature.traits)
+    }
+
+    private fun isDwarf(creature: Creature): Boolean {
+        return (creature.isHumanoid == true || creature.isHumanoid == null) &&
+                (creature.planet == Planet.Earth || creature.planet == null) &&
+                (creature.age in 0..200 || creature.age == null) &&
+                (creature.traits == null || Traits.SHORT in creature.traits || Traits.BULKY in creature.traits)
+    }
+
+    fun classify(creatures: MutableList<Creature>) {
+        for (creature in creatures) {
+            when {
+                isWookie(creature) || isEwok(creature) -> universes[0].individuals.add(creature)
+                isAsgardian(creature) -> universes[1].individuals.add(creature)
+                isBetelgeusian(creature) || isVogon(creature) -> universes[2].individuals.add(creature)
+                isElf(creature) || isDwarf(creature) -> universes[3].individuals.add(creature)
+            }
+        }
+    }
 }
 
 fun main() {
     val fileReader = FileReader("src/main/resources/input.json")
-    fileReader.readAndParseJson()
+    val data = fileReader.readAndParseJson()
+    if (data != null) {
+        val classifier = UniverseClassifier()
+        classifier.classify(data)
+    } else {
+        println("Failed to read or parse the input file.")
+    }
 }
