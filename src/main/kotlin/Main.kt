@@ -2,26 +2,36 @@ import java.io.File
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 
+// Class for Planet
+enum class Planet {
+    Earth, Asgard, Betelgeuse, Vogsphere, Kashyyyk, Endor
+}
+
+enum class Traits {
+    HAIRY, TALL, SHORT, BLONDE, EXTRA_ARMS, EXTRA_HEAD, GREEN, BULKY, POINTY_EARS
+}
+
 // Class for a creature
 data class Creature(
-    private var id: Int,
-    private var isHumanoid: Boolean?,
-    private var planet: String?,
-    private var age: Int?,
-    private var traits: List<String>?
-) {
-    // Getter methods to access private properties
-    fun getId() = id
-    fun getIsHumanoid() = isHumanoid
-    fun getPlanet() = planet
-    fun getAge() = age
-    fun getTraits() = traits
-}
+    val id: Int,
+    val isHumanoid: Boolean? = null,
+    val planet: Planet? = null,
+    val age: Int? = null,
+    val traits: List<Traits>? = null
+)
 
 // Class for a list of creatures
 data class CreatureList(
     val data: List<Creature>
 )
+
+// Class for defining universe
+data class Universe(
+    val name: String,
+    val individuals: MutableList<CreatureList>
+)
+
+
 
 // Class for file reading
 data class FileReader(
@@ -45,9 +55,34 @@ data class FileReader(
             val mapper = jacksonObjectMapper()
             val text = file.readText()
             val response: CreatureList = mapper.readValue(text)
-
+            println("All creatures:");
             for (creature in response.data) {
                 println("Creature: $creature")
+            }
+            println("Creatures with even id:")
+            for (creature in response.data) {
+                // print event IDs
+                if (creature.id % 2 == 0) {
+                    println(creature)
+                }
+            }
+            println("Creatures with odd id:")
+            for (creature in response.data) {
+                if (creature.id % 2 != 0) {
+                    println(creature)
+                }
+            }
+            println("Creatures from Earth:")
+            for (creature in response.data) {
+                if (creature.planet == Planet.Earth) {
+                    println(creature)
+                }
+            }
+            println("Very huge creatures:")
+            for (creature in response.data) {
+                if (creature.traits != null && Traits.TALL in creature.traits) {
+                    println(creature)
+                }
             }
         } else {
             println("File does not exist")
@@ -58,6 +93,6 @@ data class FileReader(
 }
 
 fun main() {
-    val fileReader = FileReader("src/main/resources/test-input.json")
+    val fileReader = FileReader("src/main/resources/input.json")
     fileReader.readAndParseJson()
 }
