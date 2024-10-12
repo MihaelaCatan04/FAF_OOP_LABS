@@ -55,13 +55,22 @@ class UniverseClassifier {
                 (creature.traits == null || Traits.SHORT in creature.traits || Traits.BULKY in creature.traits)
     }
 
+    private fun isAllNull(creature: Creature): Boolean {
+        return creature.isHumanoid == null &&
+                creature.planet == null &&
+                creature.age == null &&
+                creature.traits == null
+    }
+
     fun classify(creatures: MutableList<Creature>) {
         for (creature in creatures) {
             when {
+                isAllNull(creature) -> universes[4].individuals.add(creature)
                 isWookie(creature) || isEwok(creature) -> universes[0].individuals.add(creature)
                 isAsgardian(creature) -> universes[1].individuals.add(creature)
                 isBetelgeusian(creature) || isVogon(creature) -> universes[2].individuals.add(creature)
                 isElf(creature) || isDwarf(creature) -> universes[3].individuals.add(creature)
+                else -> universes[4].individuals.add(creature)
             }
         }
     }
