@@ -5,7 +5,8 @@ class UniverseClassifier {
         Universe("starWars"),
         Universe("marvel"),
         Universe("hitchHiker"),
-        Universe("rings")
+        Universe("rings"),
+        Universe("unidentified")
     )
     // Method to classify a Wookie
     private fun isWookie(creature: Creature): Boolean {
