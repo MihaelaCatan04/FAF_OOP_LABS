@@ -13,7 +13,7 @@ class View() {
                     println(it)
                 }
             } else {
-                println("File for universe ${universe.name} does not exist.")
+                error("File for universe ${universe.name} does not exist.")
             }
         }
     }
