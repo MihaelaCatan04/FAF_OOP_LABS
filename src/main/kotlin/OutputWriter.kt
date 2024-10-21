@@ -5,7 +5,7 @@ import java.util.*
 // Class to write the output
 class OutputWriter() {
     // Method to write to files
-    fun writeToOutputFiles(path: String, universes: MutableList<Universe>) {
+    fun writeToOutputFiles(path: String, universes: List<Universe>) {
         // Use Jackson Object Mapper to serialize
         val mapper = jacksonObjectMapper()
         for (universe in universes) {
