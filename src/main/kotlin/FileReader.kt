@@ -16,17 +16,16 @@ class FileReader(
             if (text.isNotEmpty()) {
                 // If the content is not empty, return it
                 return text
-            }
-            else{
+            } else {
                 // If the content is empty, raise an error
                 error("File cannot be empty")
             }
-        }
-        else {
+        } else {
             // If the file is not found, raise an error
             error("File not found!")
         }
     }
+
     // Method to deserialize a JSON
     fun parseJson(text: String): List<Creature> {
         // Create an instance of the JacksonObjectMapper

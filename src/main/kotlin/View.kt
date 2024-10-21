@@ -2,7 +2,7 @@ import java.io.File
 
 // Class to view the output json files content
 class View() {
-    fun showContent(){
+    fun showContent() {
         for (universe in UniverseClassifier().universes) {
             val fileName = "src/main/resources/output/${universe.name.lowercase()}.json"
             val file = File(fileName)
