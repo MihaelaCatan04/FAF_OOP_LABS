@@ -1,3 +1,5 @@
+package Laboratory_Work_No_0
+
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import java.util.*
