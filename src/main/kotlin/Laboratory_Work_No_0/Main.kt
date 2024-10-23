@@ -1,3 +1,5 @@
+package Laboratory_Work_No_0
+
 fun main() {
     // Create an instance of FileReader to read from the specified input JSON file
     val fileReader = FileReader()

@@ -1,3 +1,5 @@
+package Laboratory_Work_No_0
+
 // Class to classify the creatures
 class UniverseClassifier {
     // Create a Mutable List of universes
