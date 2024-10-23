@@ -1,5 +1,5 @@
 package Laboratory_Work_No_1.Task2
-
+// InfoDisplay class to call the methods of the TextData class
 class InfoDisplay {
     public fun displayInformation(text: TextData){
         println ("Filename: ${text.getFilename()}")
