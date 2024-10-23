@@ -8,7 +8,7 @@ class FileReader() {
     public fun readFileIntoString(path: String): String {
         // Read the text from the file
         val text = Path(path).readText()
-        if (!text.isNullOrBlank()) {
+        if (text.isNotBlank()) {
             return text
         } else {
             // Throw an error if the file is empty

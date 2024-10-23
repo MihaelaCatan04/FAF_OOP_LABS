@@ -8,13 +8,13 @@ fun main(args: Array<String>) {
     // Check if the command line arguments satisfy the lab condition
     if (args.size == 2) {
         // Instantiate an InfoDisplay object to print information
-        var printer = InfoDisplay()
+        val printer = InfoDisplay()
         // Name of the file sent as a command line argument
         val name = args[0]
         // Filepath sent as a command line argument
         val path = args[1]
         // Create a TextData object using the default constructor
-        var text1 = TextData(fileName = name, text = reader.readFileIntoString(path))
+        val text1 = TextData(fileName = name, text = reader.readFileIntoString(path))
         // Call the methods of the TextData using the printer object
         printer.displayInformation(text1)
         // Create a TextData object using the secondary constructor (which in java would have been TextData(String text))
