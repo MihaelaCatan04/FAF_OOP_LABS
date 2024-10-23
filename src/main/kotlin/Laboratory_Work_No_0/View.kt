@@ -1,3 +1,5 @@
+package Laboratory_Work_No_0
+
 import java.io.File
 
 // Class to view the output json files content

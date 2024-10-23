@@ -1,3 +1,5 @@
+package Laboratory_Work_No_0
+
 // Class for a creature
 data class Creature(
     val id: Int,
