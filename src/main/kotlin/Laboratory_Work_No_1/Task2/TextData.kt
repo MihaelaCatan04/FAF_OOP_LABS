@@ -13,7 +13,11 @@ class TextData(
 ) {
     val vowels = listOf('a', 'e', 'i', 'o', 'u')
 
-    constructor(text: String) : this("", text)
+    constructor(text: String) : this("", text) {
+        if (text.isEmpty()) {
+            error("Text cannot be an empty string")
+        }
+    }
 
     public fun getFilename(): String {
         return fileName
