@@ -3,7 +3,7 @@ package Laboratory_Work_No_1.Task2
 import java.util.*
 
 class TextData(
-    private val fileName: String,
+    private val fileName: String = "",
     private var text: String,
     private var numberOfVowels: Int = -1,
     private var numberOfConsonants: Int = -1,
@@ -12,15 +12,8 @@ class TextData(
     private var longestWord: String = ""
 ) {
     val vowels = listOf('a', 'e', 'i', 'o', 'u')
-    val punctuationList = listOf(
-        '.', ',', '!', '?', ':', ';',
-        '\'', '"', '(', ')', '[', ']',
-        '{', '}', '-', '_', '—', ' '
-    )
 
-    public fun TextData(text: String) {
-        this.text = text
-    }
+    constructor(text: String) : this("", text)
 
     public fun getFilename(): String {
         return fileName
@@ -32,48 +25,28 @@ class TextData(
 
     public fun getNumberOfVowels(): Int {
         if (numberOfVowels == -1) {
-            numberOfVowels = 0
-            for (char in text.lowercase()) {
-                if (char in vowels) {
-                    numberOfVowels++
-                }
-            }
+            numberOfVowels = text.lowercase().count { it in vowels }
         }
         return numberOfVowels
     }
 
     public fun getNumberOfConsonants(): Int {
         if (numberOfConsonants == -1) {
-            numberOfConsonants = 0
-            for (char in text.lowercase()) {
-                if (!(char in vowels) && !(char in punctuationList)) {
-                    numberOfConsonants++
-                }
-            }
+            numberOfConsonants = text.lowercase().count { it !in vowels && it.isLetter() }
         }
         return numberOfConsonants
     }
 
     public fun getNumberOfLetters(): Int {
         if (numberOfLetters == -1) {
-            numberOfLetters = 0
-            for (char in text) {
-                if (!(char in punctuationList)) {
-                    numberOfLetters++
-                }
-            }
+            numberOfLetters = text.count { it.isLetter() }
         }
         return numberOfLetters
     }
 
     public fun getNumberOfSentences(): Int {
         if (numberOfSentences == -1) {
-            numberOfSentences = 0
-            for (char in text) {
-                if (char == '.' || char == '!' || char == '?') {
-                    numberOfSentences++
-                }
-            }
+            numberOfSentences = text.count { it == '.' || it == '!' || it == '?' }
         }
         return numberOfSentences
     }
