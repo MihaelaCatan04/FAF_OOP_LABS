@@ -9,12 +9,10 @@ class Display(
     public fun compareSize(m: Display) {
         val selfArea = width * height
         val mArea = m.width * m.height
-        if (selfArea > mArea) {
-            println("Size of the $model monitor is bigger than size of the ${m.model} monitor.")
-        } else if (selfArea < mArea) {
-            println("Size of the ${m.model} monitor is bigger than size of the $model monitor.")
-        } else {
-            println("Size of the $model monitor is equal to size of ${m.model} monitor.")
+        when {
+            selfArea > mArea -> println("The screen of the $model monitor is bigger than the screen of the ${m.model} monitor.")
+            selfArea < mArea -> println("The screen of the ${m.model} monitor is bigger than the screen of the $model monitor.")
+            else -> println("The screen of the $model monitor and the screen of the ${m.model} monitor have the same size.")
         }
     }
 
