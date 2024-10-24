@@ -8,7 +8,7 @@ class Display(
     private var model: String,
 ) {
     // Instantiate an ObjectComparison instance to use it in the methods of the Display class
-    private val objectComparer = ObjectComparison()
+    private val objectComparer = ValueComparer()
     // Method to compare size
     public fun compareSize(m: Display) {
 

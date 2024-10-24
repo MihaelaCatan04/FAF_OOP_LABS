@@ -1,6 +1,6 @@
 package Laboratory_Work_No_1.Task1
 // Class to compare 2 objects based on any criteria
-class ObjectComparison {
+class ValueComparer {
     // Method to compare values
     public fun compareValues(value1: Float, value2: Float, criteria: String, name1: String, name2: String) {
         when {
