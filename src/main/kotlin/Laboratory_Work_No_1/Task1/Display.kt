@@ -26,5 +26,8 @@ class Display(
         compareSize(m);
         compareSharpness(m);
     }
-
+    // Getter function for name for Task #3
+    public fun getName(): String {
+        return model
+    }
 }
