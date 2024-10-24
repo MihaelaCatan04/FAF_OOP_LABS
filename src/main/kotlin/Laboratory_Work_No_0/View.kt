@@ -6,7 +6,7 @@ import java.io.File
 class View() {
     fun showContent() {
         for (universe in UniverseClassifier().universes) {
-            val fileName = "src/main/resources/output/${universe.name.lowercase()}.json"
+            val fileName = "src/main/resources/Lab0/output/${universe.name.lowercase()}.json"
             val file = File(fileName)
 
             if (file.exists()) {

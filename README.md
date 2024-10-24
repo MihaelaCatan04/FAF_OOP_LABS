@@ -1,22 +1,39 @@
-# Laboratory Work No. 1 - Object-Oriented Programming Course
+# OOP Laboratory Works
 
-## Overview
-This project serves as the first laboratory work for the Object-Oriented Programming (OOP) course. It involves classifying fictional creatures from various universes based on their characteristics and traits. The application reads data from a JSON file, classifies the creatures into different universes, and writes the output to separate JSON files.
+This repository contains the Object-Oriented Programming (OOP) laboratory works completed as part of the Software
+Engineering curriculum (FAF) at the Technical University of Moldova. 
 
-## Requirements
-- Kotlin (version 1.5 or higher)
-- Jackson Kotlin module
-- A JSON file containing creature data formatted correctly
+## Laboratory Work 0 - Classification of Creatures
 
-## Installation
-1. **Clone the Repository**:
+This lab focuses on learning the basics of Kotlin, Git, and Object-Oriented Programming. It involves classifying
+fictional creatures based on their characteristics. The tasks include setting up Git, reading JSON files, and creating
+classes to represent alien species for classification purposes.
+
+- **Code Location**: `src/main/kotlin/Laboratory_Work_No_0`
+
+## Laboratory Work 1 - Creating Multiple Objects and Class Composition
+
+This lab involves creating an OOP system to define multiple distinct objects using the same class. It covers topics such
+as list iteration, class composition, and text processing, building a solid understanding of class design and
+interaction.
+
+- **Code Location**: `src/main/kotlin/Laboratory_Work_No_1`
+
+## How to Run
+
+1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/MihaelaCatan04/FAF_OOP_LAB_1.git
+   git clone https://github.com/MihaelaCatan04/FAF_OOP_LABS.git
+   ```
+
 2. **Navigate to the Project Directory:**
-   ```bash 
+   ```bash
    cd src/main/kotlin
-3. Run the main function in the ```Main.kt``` file.
+   ```
+
+3. **Run the Project:** Execute the `Main.kt` files for the desired task using your favorite IDE.
 
 ## Contributors
-* **Mihaela Catan:** Software Engineering Student, FAF-231, Technical University of Moldova
-* **Dominic Flocea:** University Lecturer, Technical University of Moldova
+
+- **Mihaela Catan** - Software Engineering Student, FAF-231, Technical University of Moldova
+- **Dominic Flocea** - University Lecturer, Technical University of Moldova
