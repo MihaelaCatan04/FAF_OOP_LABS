@@ -4,7 +4,7 @@ import Laboratory_Work_No_1.Task1.Display
 
 class Assistant(
     //- assistantName
-    private var assistantName: String,
+    private val assistantName: String,
     //- List<Display> assignedDisplays
     private var assignedDisplays: MutableList<Display>
 ) {
@@ -26,5 +26,9 @@ class Assistant(
         //Return an error if there is no such monitor in the list
             error("The monitor is not in the store.")
         }
+    }
+    //Getter function for assignedDisplays to use in Main.kt
+    public fun getAssignedDisplays(): MutableList<Display> {
+        return assignedDisplays
     }
 }

@@ -14,8 +14,13 @@ fun main() {
     // Create a new Display instance to pass as parameter to assignDisplay()
     val newDisplay = Display(2560, 1080, 100.5f, "Xiaomi")
     assistant.assignDisplay(newDisplay)
+    // Call assist method to see the comparison between monitors
     assistant.assist()
-    // Buy a monitor
-    val boughtDisplay = newDisplay
+    // Instantiate a buyer
+    val buyer = Buyer(assistant)
+    // Make a choice as a buyer
+    val choice = buyer.pickMonitor()
+    // Buy the display
+    val boughtDisplay = assistant.buyDisplay(assistant.getAssignedDisplays()[choice - 1])
     println("Congratulations! You bought the following display: ${boughtDisplay.getName()}")
 }
