@@ -13,10 +13,12 @@ class Buyer(
             )
         }
     }
+
     // Method to pick a monitor to buy
     public fun pickMonitor(): Int {
         displayOptions()
-        val nrOfAvailableMonitors = assignedAssistant.getAssignedDisplays().count()
+        val displays = assignedAssistant.getAssignedDisplays()
+        val nrOfAvailableMonitors = displays.count()
         if (nrOfAvailableMonitors > 0) {
             var chosenIndex = 0
             do {
