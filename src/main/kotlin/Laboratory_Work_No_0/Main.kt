@@ -5,7 +5,7 @@ fun main() {
     val fileReader = FileReader()
 
     // Read data from the JSON file
-    val data = fileReader.readJson("src/main/resources/input.json")
+    val data = fileReader.readJson("src/main/resources/Lab0/input.json")
 
     // Parse data from the JSON
     val creatures = fileReader.parseJson(data)
@@ -20,7 +20,7 @@ fun main() {
     val outputWriter = OutputWriter()
 
     // Write the classified creatures to respective output JSON files for each universe
-    outputWriter.writeToOutputFiles("src/main/resources/output", classifier.universes)
+    outputWriter.writeToOutputFiles("src/main/resources/Lab0/output", classifier.universes)
 
     // Print a message indicating that the classification and output writing process is complete
     println("Classification complete. Output files written.")

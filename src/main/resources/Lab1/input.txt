@@ -1,0 +1,1 @@
+Object-Oriented Programming is like creating a tiny world where every object has its own little job, and together! Each class is like a blueprint, and every object is a unique friend born from it. Just like in life, collaboration makes everything better, and in OOP, it’s all about teamwork between these friendly objects to make your code a happy, functioning family!
