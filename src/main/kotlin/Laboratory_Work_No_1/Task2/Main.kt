@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
         val text2 = TextData("Hello, people!")
         // Call the methods of the TextData object using the printer object
         printer.displayInformation(text2)
-        } else {
+    } else {
         // if the command line argument don't satisfy the lab condition, throw an error
         error("Command-line arguments need to have the structure: nameOfTheFile pathToTheFile.")
         // example of cmd line arguments: input.txt src/main/resources/Lab1/input.txt
