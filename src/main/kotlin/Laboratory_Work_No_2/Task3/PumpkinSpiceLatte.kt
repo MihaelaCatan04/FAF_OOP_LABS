@@ -12,6 +12,6 @@ class PumpkinSpiceLatte(
     // Inheriting and overriding printCofeeDetails from Cappuccino
     public override fun printCoffeeDetails() {
         super.printCoffeeDetails()
-        println("Pumpkin Spice: $mgOfPumpkinSpice mg")
+        println("Adding $mgOfPumpkinSpice mg of Pumpkin Spice")
     }
 }

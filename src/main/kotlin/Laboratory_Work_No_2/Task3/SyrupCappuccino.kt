@@ -13,6 +13,6 @@ class SyrupCappuccino(
     // Inheriting and overriding printCoffeeDetails from Cappuccino
     public override fun printCoffeeDetails() {
         super.printCoffeeDetails()
-        println("Syrup type: $syrup")
+        println("Adding $syrup syrup")
     }
 }

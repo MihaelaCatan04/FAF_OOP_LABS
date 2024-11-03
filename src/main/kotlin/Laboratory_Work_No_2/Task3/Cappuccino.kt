@@ -11,6 +11,6 @@ open class Cappuccino(
     // Inheriting, overriding printCoffeeDetails from Coffee and making it a base class
     public override fun printCoffeeDetails() {
         super.printCoffeeDetails()
-        println("Milk: $mlOfMilk ml")
+        println("Adding $mlOfMilk ml of milk")
     }
 }

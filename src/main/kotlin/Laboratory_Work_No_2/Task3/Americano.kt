@@ -11,6 +11,6 @@ class Americano(
     // Inheriting and overriding printCoffeeDetails from Coffee
     public override fun printCoffeeDetails() {
         super.printCoffeeDetails()
-        println("Water: $mlOfWater ml")
+        println("Adding $mlOfWater ml of water")
     }
 }
