@@ -1,10 +1,10 @@
-package Laboratory_Work_No_2.Task4
+package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
 import Laboratory_Work_No_2.Task1.SyrupType
 
 // Class SyrupCappuccino that inherits from Cappuccino
-class SyrupCappuccino(
+internal class SyrupCappuccino(
     private var intensityCoffe: Intensity,
     private var mltrOfMilk: Int,
     private var syrup: SyrupType,

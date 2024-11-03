@@ -1,9 +1,9 @@
-package Laboratory_Work_No_2.Task4
+package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
 
 // Class for Americano that inherits from Coffee
-class Americano(
+internal class Americano(
     private var intensityCoffee: Intensity,
     private var mlOfWater: Int,
     private val coffeeName: String = "Americano"

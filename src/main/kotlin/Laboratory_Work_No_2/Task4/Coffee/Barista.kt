@@ -1,7 +1,8 @@
-package Laboratory_Work_No_2.Task4
+package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
 import Laboratory_Work_No_2.Task1.SyrupType
+import Laboratory_Work_No_2.Task4.CoffeeType
 
 // Class for a barista
 class Barista(
@@ -57,7 +58,7 @@ class Barista(
         } while (mgOfPumpkinSpice <= 0)
         return mgOfPumpkinSpice
     }
-    public fun takeOrder(): Coffee? {
+    internal fun takeOrder(): Coffee? {
         println("Welcome to the Coffee Shop!")
         var coffeeKind = takeCoffeeKind()
         var coffeeIntensity = takeIntensity()

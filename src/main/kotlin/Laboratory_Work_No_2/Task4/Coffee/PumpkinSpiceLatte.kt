@@ -1,9 +1,9 @@
-package Laboratory_Work_No_2.Task4
+package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
 
 // Class for PumpkinSpiceLatte that inherits from Cappuccino
-class PumpkinSpiceLatte(
+internal class PumpkinSpiceLatte(
     private var intensityOfCoffee: Intensity,
     private var mlOfMilk: Int,
     private var mgOfPumpkinSpice: Int,

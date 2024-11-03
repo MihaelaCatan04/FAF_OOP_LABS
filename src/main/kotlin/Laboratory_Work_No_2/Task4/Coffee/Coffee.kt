@@ -1,9 +1,9 @@
-package Laboratory_Work_No_2.Task4
+package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
 
 // Parent class Coffee
-open class Coffee(
+internal open class Coffee(
     private var coffeeIntensity: Intensity,
     private val name: String = "Coffee"
 ) {
