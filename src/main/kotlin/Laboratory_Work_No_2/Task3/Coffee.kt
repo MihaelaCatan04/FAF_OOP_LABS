@@ -1,4 +1,4 @@
-package Laboratory_Work_No_2.Task2
+package Laboratory_Work_No_2.Task3
 
 import Laboratory_Work_No_2.Task1.Intensity
 
@@ -9,7 +9,15 @@ open class Coffee(
 ) {
     // Creating base function printCoffeeDetails
     public open fun printCoffeeDetails() {
-        println("Making $name")
-        println("Intensity set to $coffeeIntensity")
+        println("Recipe for $name")
+        println("Coffee intensity: $coffeeIntensity")
+    }
+
+    companion object {
+        public fun makeCoffee(coffeeIntensity: Intensity): Coffee {
+            println("Making Coffee")
+            println("Setting intensity to $coffeeIntensity")
+            return Coffee(coffeeIntensity)
+        }
     }
 }

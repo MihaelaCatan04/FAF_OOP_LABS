@@ -9,7 +9,7 @@ open class Coffee(
 ) {
     // Creating base function printCoffeeDetails
     public open fun printCoffeeDetails() {
-        println("Making $name")
+        println("Recipe for $name")
         println("Coffee intensity: $coffeeIntensity")
     }
 }

@@ -1,4 +1,4 @@
-package Laboratory_Work_No_2.Task2
+package Laboratory_Work_No_2.Task3
 
 import Laboratory_Work_No_2.Task1.Intensity
 
@@ -11,6 +11,15 @@ class Americano(
     // Inheriting and overriding printCoffeeDetails from Coffee
     public override fun printCoffeeDetails() {
         super.printCoffeeDetails()
-        println("Adding $mlOfWater ml of water")
+        println("Water: $mlOfWater ml")
+    }
+
+    companion object {
+        public fun makeAmericano(intensityCoffee: Intensity, mlOfWater: Int): Americano {
+            println("Making Americano")
+            println("Setting intensity to $intensityCoffee")
+            println("Adding $mlOfWater ml of water")
+            return Americano(intensityCoffee, mlOfWater)
+        }
     }
 }

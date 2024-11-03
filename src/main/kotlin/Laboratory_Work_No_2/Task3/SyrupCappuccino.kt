@@ -1,4 +1,4 @@
-package Laboratory_Work_No_2.Task2
+package Laboratory_Work_No_2.Task3
 
 import Laboratory_Work_No_2.Task1.Intensity
 import Laboratory_Work_No_2.Task1.SyrupType
@@ -13,6 +13,15 @@ class SyrupCappuccino(
     // Inheriting and overriding printCoffeeDetails from Cappuccino
     public override fun printCoffeeDetails() {
         super.printCoffeeDetails()
-        println("Adding $syrup syrup")
+        println("Syrup type: $syrup")
+    }
+    companion object {
+         public fun makeSyrupCapuccino(intensityCoffe: Intensity, mltrOfMilk: Int, syrup: SyrupType): SyrupCappuccino {
+            println("Making Syrup Cappuccino")
+            println("Setting intensity to $intensityCoffe")
+            println("Adding $mltrOfMilk ml of milk")
+            println("Adding $syrup syrup")
+            return SyrupCappuccino(intensityCoffe, mltrOfMilk, syrup)
+        }
     }
 }
