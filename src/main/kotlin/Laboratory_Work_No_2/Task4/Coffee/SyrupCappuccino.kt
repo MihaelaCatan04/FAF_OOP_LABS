@@ -15,6 +15,7 @@ internal class SyrupCappuccino(
         super.printCoffeeDetails()
         println("Syrup type: $syrup")
     }
+    // Method to print recipe of SyrupCappuccino
     companion object {
          public fun makeSyrupCappuccino(intensityCoffe: Intensity, mltrOfMilk: Int, syrup: SyrupType): SyrupCappuccino {
             println("Making Syrup Cappuccino")

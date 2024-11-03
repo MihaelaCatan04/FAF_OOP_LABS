@@ -10,6 +10,7 @@ class Barista(
     val availableIntensities: List<Intensity>,
     val availableSyrups: List<SyrupType>
 ) {
+    // Method to take user input used later in taking orders
     private fun <T> takeUserInput(prompt: String, options: List<T>): T {
         println(prompt)
         for (i in options.indices) {
@@ -22,17 +23,19 @@ class Barista(
         } while (choice !in 1..options.size)
         return options[choice - 1]
     }
+    // Method to take order of the kind of coffee
     private fun takeCoffeeKind(): CoffeeType {
         return takeUserInput("What kind of coffee would you like?", availableCoffee)
     }
-
+    // Method to take order of the coffee intensity
     private fun takeIntensity(): Intensity {
         return takeUserInput("What kind of intensity would you like?", availableIntensities)
     }
-
+    // Method to take order of the syrup kind for SyrupCappuccino
     private fun takeSyrupType(): SyrupType {
         return takeUserInput("What kind of syrup would you like?", availableSyrups)
     }
+    // Method to take order of the amount of water in americano orders
     private fun takeMililitersOfWater(): Int {
         var mlOfWater: Int;
         do {
@@ -42,6 +45,7 @@ class Barista(
         return mlOfWater
 
     }
+    // Method to take order of the amount of milk in cappuccino orders
     private fun takeMililitersOfMilk(): Int {
         var mlOfMilk: Int;
         do {
@@ -50,6 +54,7 @@ class Barista(
         } while (mlOfMilk <= 0)
         return mlOfMilk
     }
+    // Method to take order of the amount of pumpkin spice in PumpkinSpiceLatte orders
     private fun takeMiligramsOfPumpkinSpice(): Int {
         var mgOfPumpkinSpice: Int;
         do {
@@ -58,6 +63,7 @@ class Barista(
         } while (mgOfPumpkinSpice <= 0)
         return mgOfPumpkinSpice
     }
+    // Internal method to take orders of coffee
     internal fun takeOrder(): Coffee? {
         println("Welcome to the Coffee Shop!")
         var coffeeKind = takeCoffeeKind()
@@ -87,6 +93,7 @@ class Barista(
             }
         }
     }
+    // Public method to say a wish
     public fun sayWish() {
         var randomNumber = (0..3).random()
         when (randomNumber) {

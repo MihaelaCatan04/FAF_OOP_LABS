@@ -13,7 +13,7 @@ open class Cappuccino(
         super.printCoffeeDetails()
         println("Milk: $mlOfMilk ml")
     }
-
+    // Method to print recipe of Cappuccino
     companion object {
         public fun makeCappuccino(intensity: Intensity, mlOfMilk: Int): Cappuccino {
             println("Making Cappuccino")

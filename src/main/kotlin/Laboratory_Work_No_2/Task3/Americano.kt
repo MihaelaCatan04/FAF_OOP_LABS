@@ -13,7 +13,7 @@ class Americano(
         super.printCoffeeDetails()
         println("Water: $mlOfWater ml")
     }
-
+    // Method to print recipe of Americano
     companion object {
         public fun makeAmericano(intensityCoffee: Intensity, mlOfWater: Int): Americano {
             println("Making Americano")

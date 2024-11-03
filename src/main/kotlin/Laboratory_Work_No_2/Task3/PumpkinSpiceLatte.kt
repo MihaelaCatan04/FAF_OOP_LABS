@@ -14,7 +14,7 @@ class PumpkinSpiceLatte(
         super.printCoffeeDetails()
         println("Pumpkin Spice: $mgOfPumpkinSpice mg")
     }
-
+    // Method to print recipe of PumpkinSpiceLatte
     companion object {
         public fun makePumpkinSpiceLatte(
             intensityOfCoffee: Intensity,

@@ -12,7 +12,7 @@ internal open class Coffee(
         println("Recipe for $name")
         println("Coffee intensity: $coffeeIntensity")
     }
-
+    // Method to print recipe of Coffee
     companion object {
         public fun makeCoffee(coffeeIntensity: Intensity): Coffee {
             println("Making Coffee")
