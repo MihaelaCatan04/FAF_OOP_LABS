@@ -1,23 +1,33 @@
 # OOP Laboratory Works
 
-This repository contains the Object-Oriented Programming (OOP) laboratory works completed as part of the Software
-Engineering curriculum (FAF) at the Technical University of Moldova. 
+This repository contains the Object-Oriented Programming (OOP) laboratory works completed as part of the Software Engineering curriculum (FAF) at the Technical University of Moldova. 
 
-## Laboratory Work 0 - Classification of Creatures
+## Laboratory Work 0 - Papers Please
 
-This lab focuses on learning the basics of Kotlin, Git, and Object-Oriented Programming. It involves classifying
-fictional creatures based on their characteristics. The tasks include setting up Git, reading JSON files, and creating
-classes to represent alien species for classification purposes.
+This lab is inspired by the game: Papers, Please.
+
+The primary task in the game is for the player to decide whether to grant or deny individuals entry into the city, based on their papers data.
+
+The lab builds on the premise, but has some modified rules and background story, for a more light-hearted experience.
 
 - **Code Location**: `src/main/kotlin/Laboratory_Work_No_0`
 
-## Laboratory Work 1 - Creating Multiple Objects and Class Composition
+## Laboratory Work 1 - Class & Objects Galore
 
-This lab involves creating an OOP system to define multiple distinct objects using the same class. It covers topics such
-as list iteration, class composition, and text processing, building a solid understanding of class design and
-interaction.
+This lab is inspired by FAF archives
+
+The lab is a collection of object-oriented challenges, for object-oriented solutions.
+
+You will learn: Creating multiple distinct Objects defined by the same class. List iteration, class composition and text processing.
 
 - **Code Location**: `src/main/kotlin/Laboratory_Work_No_1`
+
+## Laboratory Work 2 - Coffee Inheritance
+
+This lab focuses on using inheritance to build and extend a hierarchy of classes. You'll explore class hierarchies, method overriding, and encapsulation to create a structured system of beverage-related classes, enhancing reuse and promoting clean code principles.
+
+- **Code Location**: `src/main/kotlin/Laboratory_Work_No_2`
+
 
 ## How to Run
 
