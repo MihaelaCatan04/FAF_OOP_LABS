@@ -10,7 +10,7 @@ class Display(
     // Instantiate an ObjectComparison instance to use it in the methods of the Display class
     private val objectComparer = ValueComparer()
     // Method to compare size
-    public fun compareSize(m: Display) {
+     fun compareSize(m: Display) {
 
         val selfArea = width * height
         val mArea = m.width * m.height
@@ -18,16 +18,16 @@ class Display(
 
     }
     // Method to compare sharpness
-    public fun compareSharpness(m: Display) {
+     fun compareSharpness(m: Display) {
         objectComparer.compareValues(ppi, m.ppi, "sharpness", model, m.model)
     }
     // Method to compare both sharpness and size
-    public fun compareWithMonitor(m: Display) {
-        compareSize(m);
-        compareSharpness(m);
+     fun compareWithMonitor(m: Display) {
+        compareSize(m)
+        compareSharpness(m)
     }
     // Getter function for name for Task #3
-    public fun getName(): String {
+     fun getName(): String {
         return model
     }
 }
