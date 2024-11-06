@@ -1,6 +1,7 @@
 package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
+import Laboratory_Work_No_2.Task4.CoffeeType
 
 // Base class for Cappuccino that inherits from Coffee
 internal open class Cappuccino(
@@ -14,12 +15,9 @@ internal open class Cappuccino(
         println("Milk: $mlOfMilk ml")
     }
     // Method to print recipe of Cappuccino
-    companion object {
-        public fun makeCappuccino(intensity: Intensity, mlOfMilk: Int): Cappuccino {
-            println("Making Cappuccino")
-            println("Setting intensity to $intensity")
-            println("Adding $mlOfMilk ml of milk")
-            return Cappuccino(intensity, mlOfMilk)
-        }
+    public fun makeCappuccino(): Cappuccino {
+        super.makeCoffee()
+        println("Adding $mlOfMilk ml of milk")
+        return this
     }
 }

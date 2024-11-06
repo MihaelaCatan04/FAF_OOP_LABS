@@ -1,6 +1,7 @@
 package Laboratory_Work_No_2.Task4.Coffee
 
 import Laboratory_Work_No_2.Task1.Intensity
+import Laboratory_Work_No_2.Task4.CoffeeType
 
 // Class for Americano that inherits from Coffee
 internal class Americano(
@@ -14,12 +15,9 @@ internal class Americano(
         println("Water: $mlOfWater ml")
     }
     // Method to print recipe of Americano
-    companion object {
-        public fun makeAmericano(intensityCoffee: Intensity, mlOfWater: Int): Americano {
-            println("Making Americano")
-            println("Setting intensity to $intensityCoffee")
-            println("Adding $mlOfWater ml of water")
-            return Americano(intensityCoffee, mlOfWater)
-        }
+    public fun makeAmericano(): Americano {
+        super.makeCoffee()
+        println("Adding $mlOfWater ml of water")
+        return this
     }
 }

@@ -13,5 +13,13 @@ fun main() {
     if (order != null) {
         order.printCoffeeDetails()
     }
+    var wish = "yes"
+    while (wish != "no") {
+        println("Anything else? If not, please type 'no'.")
+        wish = readLine()!!
+        if (wish == "yes") {
+            var order = barista.takeOrder()
+        }
+    }
     barista.sayWish()
 }

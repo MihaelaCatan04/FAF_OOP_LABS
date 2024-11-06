@@ -70,22 +70,26 @@ class Barista(
         var coffeeIntensity = takeIntensity()
         when (coffeeKind) {
             CoffeeType.AMERICANO -> {
-                var mlOfWater = takeMililitersOfWater()
-                return Americano.makeAmericano(coffeeIntensity, mlOfWater)
+                val mlOfWater = takeMililitersOfWater()
+                val americano = Americano(coffeeIntensity, mlOfWater)
+                return americano.makeAmericano()
             }
             CoffeeType.CAPPUCCINO -> {
                 var mlOfMilk = takeMililitersOfMilk()
-                return Cappuccino.makeCappuccino(coffeeIntensity, mlOfMilk)
+                var cappuccino = Cappuccino(coffeeIntensity, mlOfMilk)
+                return cappuccino.makeCappuccino()
             }
             CoffeeType.PUMPKIN_SPICE_LATTE -> {
                 var mlOfMilk = takeMililitersOfMilk()
                 var mgOfPumpkinSpice = takeMiligramsOfPumpkinSpice()
-                return PumpkinSpiceLatte.makePumpkinSpiceLatte(coffeeIntensity, mlOfMilk, mgOfPumpkinSpice)
+                var pumpkinSpiceLatte = PumpkinSpiceLatte(coffeeIntensity,mlOfMilk,mgOfPumpkinSpice)
+                return pumpkinSpiceLatte.makePumpkinSpiceLatte()
             }
             CoffeeType.SYRUP_CAPPUCCINO -> {
                 var mlOfMilk = takeMililitersOfMilk()
                 var syrup = takeSyrupType()
-                return SyrupCappuccino.makeSyrupCappuccino(coffeeIntensity, mlOfMilk, syrup)
+                var syrupCapuccino = SyrupCappuccino(coffeeIntensity, mlOfMilk, syrup)
+                return syrupCapuccino.makeSyrupCappuccino()
             }
             else -> {
                 println("Sorry! We do not currently serve this coffee type.")
