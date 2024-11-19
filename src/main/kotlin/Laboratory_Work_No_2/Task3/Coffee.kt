@@ -13,11 +13,9 @@ open class Coffee(
         println("Coffee intensity: $coffeeIntensity")
     }
     // Method to print recipe of Coffee
-    companion object {
-        public fun makeCoffee(coffeeIntensity: Intensity): Coffee {
-            println("Making Coffee")
-            println("Setting intensity to $coffeeIntensity")
-            return Coffee(coffeeIntensity)
-        }
+    public fun makeCoffee(): Coffee {
+        println("Making $name")
+        println("Setting intensity to $coffeeIntensity")
+        return Coffee(coffeeIntensity)
     }
 }

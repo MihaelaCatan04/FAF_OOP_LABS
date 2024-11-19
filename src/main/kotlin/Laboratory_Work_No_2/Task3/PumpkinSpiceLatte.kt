@@ -15,17 +15,9 @@ class PumpkinSpiceLatte(
         println("Pumpkin Spice: $mgOfPumpkinSpice mg")
     }
     // Method to print recipe of PumpkinSpiceLatte
-    companion object {
-        public fun makePumpkinSpiceLatte(
-            intensityOfCoffee: Intensity,
-            mlOfMilk: Int,
-            mgOfPumpkinSpice: Int
-        ): PumpkinSpiceLatte {
-            println("Making Pumpkin Spice Latte")
-            println("Setting intensity to $intensityOfCoffee")
-            println("Adding $mlOfMilk ml of milk")
-            println("Adding $mgOfPumpkinSpice mg of pumpkin spice")
-            return PumpkinSpiceLatte(intensityOfCoffee, mlOfMilk, mgOfPumpkinSpice)
-        }
+    public fun makePumpkinSpiceLatte(): PumpkinSpiceLatte {
+        super.makeCappuccino()
+        println("Adding $mgOfPumpkinSpice mg of pumpkin spice")
+        return this
     }
 }

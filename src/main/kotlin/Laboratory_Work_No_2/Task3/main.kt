@@ -5,10 +5,10 @@ import Laboratory_Work_No_2.Task1.SyrupType
 
 fun main() {
     // Test data
-    val syrupCappuccino = SyrupCappuccino.makeSyrupCappuccino(Intensity.NORMAL, 150, SyrupType.VANILLA)
-    val pumpkinSpiceLatte = PumpkinSpiceLatte.makePumpkinSpiceLatte(Intensity.STRONG, 200, 50)
-    val americano = Americano.makeAmericano(Intensity.NORMAL, 200)
-    val cappuccino = Cappuccino.makeCappuccino(Intensity.NORMAL, 150)
+    val syrupCappuccino = SyrupCappuccino(Intensity.NORMAL, 150, SyrupType.VANILLA)
+    val pumpkinSpiceLatte = PumpkinSpiceLatte(Intensity.STRONG, 200, 50)
+    val americano = Americano(Intensity.NORMAL, 200)
+    val cappuccino = Cappuccino(Intensity.NORMAL, 150)
     val coffeeList: List<Coffee> = listOf(syrupCappuccino, pumpkinSpiceLatte, americano, cappuccino)
 
     for (coffee in coffeeList) {

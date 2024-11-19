@@ -14,12 +14,9 @@ class Americano(
         println("Water: $mlOfWater ml")
     }
     // Method to print recipe of Americano
-    companion object {
-        public fun makeAmericano(intensityCoffee: Intensity, mlOfWater: Int): Americano {
-            println("Making Americano")
-            println("Setting intensity to $intensityCoffee")
-            println("Adding $mlOfWater ml of water")
-            return Americano(intensityCoffee, mlOfWater)
-        }
+    public fun makeAmericano(): Americano {
+        super.makeCoffee()
+        println("Adding $mlOfWater ml of water")
+        return this
     }
 }
