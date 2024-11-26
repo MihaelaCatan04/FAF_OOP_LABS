@@ -1,7 +1,7 @@
-import Laboratory_Work_No_3.ArrayDownQueue
-import Laboratory_Work_No_3.ArrayUpQueue
-import Laboratory_Work_No_3.LinkedListQueue
-import Laboratory_Work_No_3.Queue
+import Laboratory_Work_No_3.Task1.ArrayDownQueue
+import Laboratory_Work_No_3.Task1.ArrayUpQueue
+import Laboratory_Work_No_3.Task1.LinkedListQueue
+import Laboratory_Work_No_3.Task1.Queue
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource

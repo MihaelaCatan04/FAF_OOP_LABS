@@ -1,4 +1,4 @@
-package Laboratory_Work_No_3
+package Laboratory_Work_No_3.Task1
 
 class ArrayDownQueue<T>(
     private val initialSize: Int

@@ -1,6 +1,4 @@
-package Laboratory_Work_No_3
-
-import java.util.*
+package Laboratory_Work_No_3.Task1
 
 class ArrayUpQueue<T>(
     private val initialSize: Int
