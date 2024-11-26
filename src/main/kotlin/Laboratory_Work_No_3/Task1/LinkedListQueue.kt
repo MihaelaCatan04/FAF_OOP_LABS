@@ -1,6 +1,6 @@
 package Laboratory_Work_No_3.Task1
 
-class LinkedListQueue<T>: Queue<T> {
+class LinkedListQueue<T> : Queue<T> {
     private var front: Node<T>? = null
     private var back: Node<T>? = null
     private var size: Int = 0
@@ -15,6 +15,7 @@ class LinkedListQueue<T>: Queue<T> {
         }
         size++
     }
+
     override fun dequeue(): T? {
         val nodeToReturn = front
         if (nodeToReturn == null) {
