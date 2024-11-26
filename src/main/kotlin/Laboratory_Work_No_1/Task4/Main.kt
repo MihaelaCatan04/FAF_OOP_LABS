@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
             printer.displayInformation(text)
         }
     } else {
-        // if the command line argument don't satisfy the lab condition, throw an error
+        // if the command line arguments don't satisfy the lab condition, throw an error
         error("Command-line arguments need to have the structure: nameOfTheFile pathToTheFile.")
         // example of cmd line arguments:
         // faf_life.txt src/main/resources/Lab1/faf_life.txt input.txt src/main/resources/Lab1/input.txt lab_opinion.txt src/main/resources/Lab1/lab_opinion.txt
