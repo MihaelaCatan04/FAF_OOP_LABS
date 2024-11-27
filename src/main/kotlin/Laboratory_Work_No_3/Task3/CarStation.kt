@@ -9,11 +9,11 @@ class CarStation(
     private var refuellingService: Refuelable,
     private var queue: Queue<Car>,
 ) {
-    fun serveCars(){
-        while(queue.size() > 0){
+    fun serveCars() {
+        while (queue.size() > 0) {
             var car = queue.dequeue()
             if (car != null) {
-                if (car.isDining){
+                if (car.isDining) {
                     dinningService.serveDinner(car.id.toString())
                 }
                 refuellingService.refuel(car.id.toString())
@@ -21,10 +21,12 @@ class CarStation(
 
         }
     }
-    fun addCar(car: Car){
+
+    fun addCar(car: Car) {
         queue.enqueue(car)
     }
-    fun getQueue(): Queue<Car>{
+
+    fun getQueue(): Queue<Car> {
         return queue
     }
 }

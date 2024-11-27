@@ -79,13 +79,15 @@ class CarStationTests {
         val carStation = createElectricPeopleCarStation()
         carStation.serveCars()
         assertEquals(carStation.getQueue().size(), 0)
-        carStation.addCar(Car(
-            id = 4,
-            type = "ELECTRIC",
-            passengers = "PEOPLE",
-            isDining = Random.nextBoolean(),
-            consumption = Random.nextInt(0, 50)
-        ))
+        carStation.addCar(
+            Car(
+                id = 4,
+                type = "ELECTRIC",
+                passengers = "PEOPLE",
+                isDining = Random.nextBoolean(),
+                consumption = Random.nextInt(0, 50)
+            )
+        )
         assertEquals(carStation.getQueue().size(), 1)
     }
 
@@ -94,24 +96,28 @@ class CarStationTests {
         val carStation = createGasRobotCarStation()
         carStation.serveCars()
         assertEquals(carStation.getQueue().size(), 0)
-        carStation.addCar(Car(
-            id = 4,
-            type = "GAS",
-            passengers = "ROBOTS",
-            isDining = Random.nextBoolean(),
-            consumption = Random.nextInt(0, 50)
-        ))
+        carStation.addCar(
+            Car(
+                id = 4,
+                type = "GAS",
+                passengers = "ROBOTS",
+                isDining = Random.nextBoolean(),
+                consumption = Random.nextInt(0, 50)
+            )
+        )
         assertEquals(carStation.getQueue().size(), 1)
         var CarStation2 = createGasPeopleCarStation()
         CarStation2.serveCars()
         assertEquals(CarStation2.getQueue().size(), 0)
-        CarStation2.addCar(Car(
-            id = 4,
-            type = "GAS",
-            passengers = "PEOPLE",
-            isDining = Random.nextBoolean(),
-            consumption = Random.nextInt(0, 50)
-        ))
+        CarStation2.addCar(
+            Car(
+                id = 4,
+                type = "GAS",
+                passengers = "PEOPLE",
+                isDining = Random.nextBoolean(),
+                consumption = Random.nextInt(0, 50)
+            )
+        )
         assertEquals(CarStation2.getQueue().size(), 1)
     }
 }
