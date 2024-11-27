@@ -29,4 +29,12 @@ class CarStation(
     fun getQueue(): Queue<Car> {
         return queue
     }
+
+    fun getRefuellingService(): Dineable {
+        return dinningService
+    }
+
+    fun getDinningService(): Dineable {
+        return dinningService
+    }
 }

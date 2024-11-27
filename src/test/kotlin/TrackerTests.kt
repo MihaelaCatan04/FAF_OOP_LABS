@@ -1,9 +1,19 @@
 import Laboratory_Work_No_3.Task2.*
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class TrackerTests {
-    // Not to be run simultaneously, or it will modify the global variables and return errors
+
+    @BeforeEach
+    fun clearGlobalVariables() {
+        // Reset global counters to 0
+        Dineable.peopleCount = 0
+        Dineable.robotCount = 0
+        Refuelable.electricCarsCount = 0
+        Refuelable.gasCarsCount = 0
+    }
+
     @Test
     fun testPeopleTracker() {
         val peopleDinner1 = PeopleDinner()
@@ -14,7 +24,7 @@ class TrackerTests {
         peopleDinner2.serveDinner("4")
         val robotDinner1 = RobotDinner()
         robotDinner1.serveDinner("1")
-        assertEquals(PersonTracker.getCountPeople(), 4)
+        assertEquals(Dineable.peopleCount, 4)
     }
 
     @Test
@@ -26,7 +36,7 @@ class TrackerTests {
         robotDinner1.serveDinner("3")
         val peopleDinner1 = PeopleDinner()
         peopleDinner1.serveDinner("1")
-        assertEquals(RobotTracker.getCountRobots(), 3)
+        assertEquals(Dineable.robotCount, 3)
     }
 
     @Test
@@ -38,7 +48,7 @@ class TrackerTests {
         electricStation2.refuel("2")
         electricStation1.refuel("3")
         gasStation1.refuel("4")
-        assertEquals(ElectricCarTracker.getCountElectricCars(), 3)
+        assertEquals(Refuelable.electricCarsCount, 3)
     }
 
     @Test
@@ -50,7 +60,7 @@ class TrackerTests {
         gasStation2.refuel("2")
         gasStation1.refuel("3")
         electricStation1.refuel("4")
-        assertEquals(GasCarTracker.getCountGasCars(), 3)
+        assertEquals(Refuelable.gasCarsCount, 3)
     }
 
 }
