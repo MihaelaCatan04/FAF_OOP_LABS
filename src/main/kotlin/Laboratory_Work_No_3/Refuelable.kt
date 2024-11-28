@@ -1,6 +1,8 @@
 package Laboratory_Work_No_3
 
+// Refuelable interface
 interface Refuelable {
+    // companion object to store count of electric and gas cars served across all stations
     companion object {
         var electricCarsCount = 0
         fun incrementElectricCarsCount() {
@@ -11,5 +13,6 @@ interface Refuelable {
             gasCarsCount++
         }
     }
+    // method definition for refuel
     fun refuel(carId: String)
 }

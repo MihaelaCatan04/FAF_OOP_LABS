@@ -3,20 +3,22 @@ package Laboratory_Work_No_3
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 
+// Semaphore class
 class Semaphore(
     private var carStationList: List<CarStation>,
 ) {
+    // getter for carStationList
     fun getCarStationList(): List<CarStation> {
         return carStationList
     }
 
     private val mapper = jacksonObjectMapper()
-
+    // method to deserialize the json into cars
     private fun mapCar(text: String): Car {
         val car: Car = mapper.readValue(text)
         return car
     }
-
+    // method to iterate through a list of jsons and deserialize the cars
     private fun readMultipleCars(stringCarQueue: Queue<String>): Queue<Car> {
         val carQueue = LinkedListQueue<Car>()
         for (i in 0 until stringCarQueue.size()) {
@@ -25,8 +27,7 @@ class Semaphore(
         }
         return carQueue
     }
-
-
+    // method to guide the cars to their respective station
     private fun guideCar(car: Car) {
         if (car.type == "ELECTRIC" && car.passengers == "PEOPLE") {
             carStationList.find {
@@ -52,8 +53,7 @@ class Semaphore(
             }?.addCar(car)
         }
     }
-
-
+    // method to serve the cars
     fun serveCars(stringCarQueue: Queue<String>) {
         val processedQueue = readMultipleCars(stringCarQueue)
         while (processedQueue.size() > 0) {

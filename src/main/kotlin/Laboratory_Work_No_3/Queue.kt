@@ -1,5 +1,6 @@
 package Laboratory_Work_No_3
 
+// Interface to implement the queues
 interface Queue<T> {
     fun enqueue(node: T)
     fun dequeue(): T?

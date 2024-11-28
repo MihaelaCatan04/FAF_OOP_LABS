@@ -1,10 +1,11 @@
 package Laboratory_Work_No_3
-
+// Class for defining a car station
 class CarStation(
     private var dinningService: Dineable,
     private var refuellingService: Refuelable,
     private var queue: Queue<Car>,
 ) {
+    // method to serve a car
     fun serveCars() {
         while (queue.size() > 0) {
             var car = queue.dequeue()
@@ -17,19 +18,19 @@ class CarStation(
 
         }
     }
-
+    // method to add a car to a queue
     fun addCar(car: Car) {
         queue.enqueue(car)
     }
-
+    // getter for queue
     fun getQueue(): Queue<Car> {
         return queue
     }
-
+    // getter for refuellingService
     fun getRefuellingService(): Refuelable {
         return refuellingService
     }
-
+    // getter for dinningService
     fun getDinningService(): Dineable {
         return dinningService
     }
