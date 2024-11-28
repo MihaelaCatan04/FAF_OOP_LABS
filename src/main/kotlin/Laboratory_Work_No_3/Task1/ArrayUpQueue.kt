@@ -21,18 +21,12 @@ class ArrayUpQueue<T>(
             return null
         } else {
             val node = queue[0]
-            if (count == 1) {
-                queue[0] = null
-                count--
-                return node
-            } else {
-                for (i in 0..count - 2) {
-                    queue[i] = queue[i + 1]
-                }
-                queue[count - 1] = null
-                count--
-                return node
+            for (i in 0 until count - 1) {
+                queue[i] = queue[i + 1]
             }
+            queue[count - 1] = null
+            count--
+            return node
         }
     }
 

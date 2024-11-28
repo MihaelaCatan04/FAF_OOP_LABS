@@ -66,7 +66,7 @@ if __name__ == "__main__":
             json.dump(car, f)
 
         print(json.dumps(car))
-        sleep_time = random.randint(MIN_WAIT, MAX_WAIT) / SECOND
-        time.sleep(sleep_time)
+#         sleep_time = random.randint(MIN_WAIT, MAX_WAIT) / SECOND
+#         time.sleep(sleep_time)
 
     print(json.dumps(STATS))

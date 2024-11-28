@@ -3,14 +3,14 @@ package Laboratory_Work_No_3.Task1
 class ArrayDownQueue<T>(
     private val initialSize: Int
 ) : Queue<T> {
-    private val queue = arrayOfNulls<Any>(initialSize) as Array<T?>
+    private val queue: Array<T?> = arrayOfNulls<Any>(initialSize) as Array<T?>
     private var free = initialSize
 
     override fun enqueue(node: T) {
         if (free == 0) {
             println("Queue is full! First empty it before proceeding.")
         } else {
-            queue[free - 1] = node
+            queue[initialSize - free] = node
             free--
         }
     }
@@ -20,24 +20,18 @@ class ArrayDownQueue<T>(
             println("Queue is empty!")
             return null
         } else {
-            if (initialSize - free == 1) {
-                val node = queue[free]
-                queue[initialSize - 1] = null
-                free++
-                return node
-            } else {
-                val node = queue[initialSize - 1]
-                for (i in free..initialSize - 2) {
-                    queue[i + 1] = queue[i]
-                }
-                free++
-                return node
+            val node = queue[0]
+            for (i in 0 until initialSize - free - 1) {
+                queue[i] = queue[i + 1]
             }
+            queue[initialSize - free - 1] = null
+            free++
+            return node
         }
     }
 
     override fun peek(): T? {
-        return queue[initialSize - 1]
+        return if (free == initialSize) null else queue[0]
     }
 
     override fun isEmpty(): Boolean {

@@ -10,11 +10,13 @@ import Laboratory_Work_No_3.Task3.Car
 import Laboratory_Work_No_3.Task3.CarStation
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import java.util.*
 
 class Semaphore(
-    private val carStationList: List<CarStation>,
+    private var carStationList: List<CarStation>,
 ) {
+    fun getCarStationList(): List<CarStation> {
+        return carStationList
+    }
     private val mapper = jacksonObjectMapper()
 
     private fun mapCar(text: String): Car {
@@ -32,7 +34,7 @@ class Semaphore(
     }
 
 
-    fun guideCar(car: Car) {
+    private fun guideCar(car: Car) {
         if (car.type == "ELECTRIC" && car.passengers == "PEOPLE") {
             carStationList.find {
                 it.getRefuellingService() is ElectricStation && it.getDinningService() is PeopleDinner
@@ -61,7 +63,7 @@ class Semaphore(
 
     fun serveCars(stringCarQueue: Queue<String>) {
         val processedQueue = readMultipleCars(stringCarQueue)
-        for (i in 0 until processedQueue.size()) {
+        while (processedQueue.size() > 0) {
             val car = processedQueue.dequeue() ?: continue
             guideCar(car)
         }
