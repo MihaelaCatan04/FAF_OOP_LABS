@@ -1,4 +1,4 @@
-package Laboratory_Work_No_3.Task3
+package Laboratory_Work_No_3
 
 // Later refactor code using ENUM
 data class Car(

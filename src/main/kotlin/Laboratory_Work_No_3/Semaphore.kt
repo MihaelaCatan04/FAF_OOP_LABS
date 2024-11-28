@@ -1,13 +1,5 @@
-package Laboratory_Work_No_3.Task4
+package Laboratory_Work_No_3
 
-import Laboratory_Work_No_3.Task1.LinkedListQueue
-import Laboratory_Work_No_3.Task1.Queue
-import Laboratory_Work_No_3.Task2.ElectricStation
-import Laboratory_Work_No_3.Task2.GasStation
-import Laboratory_Work_No_3.Task2.PeopleDinner
-import Laboratory_Work_No_3.Task2.RobotDinner
-import Laboratory_Work_No_3.Task3.Car
-import Laboratory_Work_No_3.Task3.CarStation
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 
@@ -17,6 +9,7 @@ class Semaphore(
     fun getCarStationList(): List<CarStation> {
         return carStationList
     }
+
     private val mapper = jacksonObjectMapper()
 
     private fun mapCar(text: String): Car {

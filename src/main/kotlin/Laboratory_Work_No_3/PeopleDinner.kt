@@ -1,4 +1,4 @@
-package Laboratory_Work_No_3.Task2
+package Laboratory_Work_No_3
 
 class PeopleDinner : Dineable {
     override fun serveDinner(carId: String) {

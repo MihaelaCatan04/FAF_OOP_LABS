@@ -1,10 +1,7 @@
-import Laboratory_Work_No_3.Task1.ArrayDownQueue
-import Laboratory_Work_No_3.Task1.ArrayUpQueue
-import Laboratory_Work_No_3.Task1.LinkedListQueue
-import Laboratory_Work_No_3.Task1.Queue
-import Laboratory_Work_No_3.Task2.*
-import Laboratory_Work_No_3.Task3.CarStation
-import Laboratory_Work_No_3.Task4.Semaphore
+import Laboratory_Work_No_3.*
+import Laboratory_Work_No_3.ArrayUpQueue
+import Laboratory_Work_No_3.LinkedListQueue
+import Laboratory_Work_No_3.Semaphore
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

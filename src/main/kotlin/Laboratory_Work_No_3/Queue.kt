@@ -1,4 +1,4 @@
-package Laboratory_Work_No_3.Task1
+package Laboratory_Work_No_3
 
 interface Queue<T> {
     fun enqueue(node: T)

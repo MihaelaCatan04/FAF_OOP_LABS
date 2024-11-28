@@ -1,8 +1,4 @@
-package Laboratory_Work_No_3.Task3
-
-import Laboratory_Work_No_3.Task1.Queue
-import Laboratory_Work_No_3.Task2.Dineable
-import Laboratory_Work_No_3.Task2.Refuelable
+package Laboratory_Work_No_3
 
 class CarStation(
     private var dinningService: Dineable,

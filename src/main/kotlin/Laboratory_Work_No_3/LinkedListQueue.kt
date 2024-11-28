@@ -1,4 +1,4 @@
-package Laboratory_Work_No_3.Task1
+package Laboratory_Work_No_3
 
 class LinkedListQueue<T> : Queue<T> {
     private var front: Node<T>? = null
