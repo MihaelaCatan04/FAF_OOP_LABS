@@ -39,48 +39,49 @@ class SemaphoreTests {
         }
         return stationsList
     }
+
     @Test
-    fun testGasCarStations(){
+    fun testGasCarStations() {
         var initialString = initializeList()
         var stations = intializeCarStations()
         var semaphore = Semaphore(stations)
         semaphore.serveCars(initialString)
         stations[2].serveCars()
         stations[3].serveCars()
-        assertEquals(Refuelable.gasCarsCount,2)
+        assertEquals(Refuelable.gasCarsCount, 2)
     }
 
     @Test
-    fun testElectricCarStations(){
+    fun testElectricCarStations() {
         var initialString = initializeList()
         var stations = intializeCarStations()
         var semaphore = Semaphore(stations)
         semaphore.serveCars(initialString)
         stations[0].serveCars()
         stations[1].serveCars()
-        assertEquals(Refuelable.electricCarsCount,3)
+        assertEquals(Refuelable.electricCarsCount, 3)
     }
 
     @Test
-    fun testPeopleCarStations(){
+    fun testPeopleCarStations() {
         var initialString = initializeList()
         var stations = intializeCarStations()
         var semaphore = Semaphore(stations)
         semaphore.serveCars(initialString)
         stations[0].serveCars()
         stations[2].serveCars()
-        assertEquals(Dineable.peopleCount,2)
+        assertEquals(Dineable.peopleCount, 2)
     }
 
     @Test
-    fun testRobotsCarStations(){
+    fun testRobotsCarStations() {
         var initialString = initializeList()
         var stations = intializeCarStations()
         var semaphore = Semaphore(stations)
         semaphore.serveCars(initialString)
         stations[1].serveCars()
         stations[3].serveCars()
-        assertEquals(Dineable.robotCount,1)
+        assertEquals(Dineable.robotCount, 1)
     }
 
 
