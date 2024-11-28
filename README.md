@@ -28,6 +28,12 @@ This lab focuses on using inheritance to build and extend a hierarchy of classes
 
 - **Code Location**: `src/main/kotlin/Laboratory_Work_No_2`
 
+## Laboratory Work 3 - Car Station
+
+This lab focuses on building a car service application that leverages abstraction, polymorphism, and composition. Inspired by real-world service workflows, the lab introduces you to the principles of clean code, interface segregation, and dependency inversion while simulating a dynamic system of serving cars.
+
+- **Code Location**: `src/main/kotlin/Laboratory_Work_No_3`
+
 
 ## How to Run
 
