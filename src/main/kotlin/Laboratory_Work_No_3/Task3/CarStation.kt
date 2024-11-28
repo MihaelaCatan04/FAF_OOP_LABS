@@ -30,8 +30,8 @@ class CarStation(
         return queue
     }
 
-    fun getRefuellingService(): Dineable {
-        return dinningService
+    fun getRefuellingService(): Refuelable {
+        return refuellingService
     }
 
     fun getDinningService(): Dineable {
