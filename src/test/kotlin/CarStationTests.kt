@@ -1,13 +1,4 @@
-import Laboratory_Work_No_3.ArrayDownQueue
-import Laboratory_Work_No_3.ArrayUpQueue
-import Laboratory_Work_No_3.LinkedListQueue
-import Laboratory_Work_No_3.Queue
-import Laboratory_Work_No_3.ElectricStation
-import Laboratory_Work_No_3.GasStation
-import Laboratory_Work_No_3.PeopleDinner
-import Laboratory_Work_No_3.RobotDinner
-import Laboratory_Work_No_3.Car
-import Laboratory_Work_No_3.CarStation
+import Laboratory_Work_No_3.*
 import org.junit.jupiter.api.Test
 import kotlin.random.Random
 import kotlin.test.assertEquals
@@ -19,8 +10,8 @@ class CarStationTests {
         for (i in 0 until 3) {
             val car = Car(
                 id = Random.nextInt(1000, 9999),
-                type = "ELECTRIC",
-                passengers = "PEOPLE",
+                type = CarTypes.ELECTRIC,
+                passengers = PassengerTypes.PEOPLE,
                 isDining = Random.nextBoolean(),
                 consumption = Random.nextInt(0, 50)
             )
@@ -34,8 +25,8 @@ class CarStationTests {
         for (i in 0 until 3) {
             val car = Car(
                 id = Random.nextInt(1000, 9999),  // Assign unique ID
-                type = "GAS",
-                passengers = "ROBOTS",
+                type = CarTypes.GAS,
+                passengers = PassengerTypes.ROBOTS,
                 isDining = Random.nextBoolean(),
                 consumption = Random.nextInt(0, 50)
             )
@@ -49,8 +40,8 @@ class CarStationTests {
         for (i in 0 until 3) {
             val car = Car(
                 id = Random.nextInt(1000, 9999),
-                type = "GAS",
-                passengers = "PEOPLE",
+                type = CarTypes.GAS,
+                passengers = PassengerTypes.PEOPLE,
                 isDining = Random.nextBoolean(),
                 consumption = Random.nextInt(0, 50)
             )
@@ -82,8 +73,8 @@ class CarStationTests {
         carStation.addCar(
             Car(
                 id = 4,
-                type = "ELECTRIC",
-                passengers = "PEOPLE",
+                type = CarTypes.ELECTRIC,
+                passengers = PassengerTypes.PEOPLE,
                 isDining = Random.nextBoolean(),
                 consumption = Random.nextInt(0, 50)
             )
@@ -99,8 +90,8 @@ class CarStationTests {
         carStation.addCar(
             Car(
                 id = 4,
-                type = "GAS",
-                passengers = "ROBOTS",
+                type = CarTypes.GAS,
+                passengers = PassengerTypes.ROBOTS,
                 isDining = Random.nextBoolean(),
                 consumption = Random.nextInt(0, 50)
             )
@@ -112,8 +103,8 @@ class CarStationTests {
         CarStation2.addCar(
             Car(
                 id = 4,
-                type = "GAS",
-                passengers = "PEOPLE",
+                type = CarTypes.GAS,
+                passengers = PassengerTypes.PEOPLE,
                 isDining = Random.nextBoolean(),
                 consumption = Random.nextInt(0, 50)
             )

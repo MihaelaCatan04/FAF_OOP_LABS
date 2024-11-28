@@ -29,25 +29,25 @@ class Semaphore(
     }
     // method to guide the cars to their respective station
     private fun guideCar(car: Car) {
-        if (car.type == "ELECTRIC" && car.passengers == "PEOPLE") {
+        if (car.type == CarTypes.ELECTRIC && car.passengers == PassengerTypes.PEOPLE) {
             carStationList.find {
                 it.getRefuellingService() is ElectricStation && it.getDinningService() is PeopleDinner
             }?.addCar(car)
         }
 
-        if (car.type == "GAS" && car.passengers == "PEOPLE") {
+        if (car.type == CarTypes.GAS && car.passengers == PassengerTypes.PEOPLE) {
             carStationList.find {
                 it.getRefuellingService() is GasStation && it.getDinningService() is PeopleDinner
             }?.addCar(car)
         }
 
-        if (car.type == "ELECTRIC" && car.passengers == "ROBOTS") {
+        if (car.type == CarTypes.ELECTRIC && car.passengers == PassengerTypes.ROBOTS) {
             carStationList.find {
                 it.getRefuellingService() is ElectricStation && it.getDinningService() is RobotDinner
             }?.addCar(car)
         }
 
-        if (car.type == "GAS" && car.passengers == "ROBOTS") {
+        if (car.type == CarTypes.GAS && car.passengers == PassengerTypes.ROBOTS) {
             carStationList.find {
                 it.getRefuellingService() is GasStation && it.getDinningService() is RobotDinner
             }?.addCar(car)

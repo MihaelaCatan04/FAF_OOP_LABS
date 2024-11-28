@@ -4,8 +4,8 @@ package Laboratory_Work_No_3
 // Data class for car
 data class Car(
     val id: Int,
-    val type: String,
-    val passengers: String,
+    val type: CarTypes,
+    val passengers: PassengerTypes,
     val isDining: Boolean,
     val consumption: Int
 )
