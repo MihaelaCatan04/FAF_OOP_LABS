@@ -34,7 +34,6 @@ This lab focuses on building a car service application that leverages abstractio
 
 - **Code Location**: `src/main/kotlin/Laboratory_Work_No_3`
 
-
 ## How to Run
 
 1. **Clone the Repository:**
